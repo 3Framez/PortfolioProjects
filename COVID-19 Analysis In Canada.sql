@@ -1,4 +1,4 @@
---COVID-19 PROJECTIONS IN CANADA 
+--COVID-19 PROJECTIONS FOR CANADA 
 
 SELECT  MAX(total_cases) AS total_cases_in_2021, MAX(new_cases) AS total_of_new_cases_in_november, (MAX(new_cases)/MAX(total_cases))*100 AS case_percentage
 FROM CovidDataProject..CovidDeaths
