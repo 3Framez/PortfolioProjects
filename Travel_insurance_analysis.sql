@@ -91,15 +91,3 @@ GROUP BY Product_Name
 ORDER BY 2 DESC
 
 
---ranking products by their highest and lowest commisions
-WITH Commision_CTE (Product_Name, Highest_Commision, Lowest_Commision)
-AS
-(
-SELECT Product_Name, MAX(Commision) AS Highest_Commision, ROUND(MIN(Commision),3) AS Lowest_Commision
-FROM Insurancedb..travel_insurance
-GROUP BY Product_Name
-)
-SELECT Product_Name,  Highest_Commision,  Lowest_Commision
-FROM Commision_CTE
-GROUP BY Product_Name
-ORDER BY 2 DESC, 1 ASC
