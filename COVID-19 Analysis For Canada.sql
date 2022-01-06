@@ -45,13 +45,10 @@ SELECT CD.population, CD.date,  SUM(CV.new_vaccinations) OVER ( ORDER BY CV.date
  AND DATEPART(YYYY, CD.date) = 2021
  AND DATEPART(MM, CD.DATE) in (09)
 
+
+
+
  --calculate the running total of % of death by population per day from september to december 
-
- 
-
-
- 
-
   SELECT distinct date, SUM(CONVERT(int,new_deaths)) OVER (order by date) AS running_total_of_new__deaths
  FROM CovidDataProject..CovidDeaths
  WHERE DATEPART(YYYY, date) = 2021
@@ -61,17 +58,6 @@ SELECT CD.population, CD.date,  SUM(CV.new_vaccinations) OVER ( ORDER BY CV.date
 
 
 
- 
-
-
-
-
-
-
-
-
- 
- 
 
  -- shows the relationship between the newly vaccinated/infected/deceased 
  --shows the percentage of people that died from new infections in the month of september
